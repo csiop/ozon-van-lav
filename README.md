@@ -1,2 +1,1 @@
-# ozon-van-lav
-Progress bar for Ozon &lt;3
+Тестовое задание для Ozon Fintech

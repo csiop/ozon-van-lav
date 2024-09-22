@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-blue: rgb(22, 14, 255);
+  --color-ligth-blue: rgb(208, 227, 253);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.general {
+  display: flex;
+}
+
+.mainBox {
+  width: 200px;
+  height: 200px;
+
+  margin: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+
+  transition: opacity 0.4s ease;
+}
+
+.mainBox::after {
+  position: absolute;
+  content: '';
+  width: 180px;
+  height: 180px;
+  background-color: white;
+
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.firstCircle {
+  background-color: var(--color-blue);
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.minHalfBox,
+.maxHalfBox {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+}
+
+.minHalf,
+.maxHalf {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background-color: var(--color-ligth-blue);
+  border-radius: 100px 100px 0 0;
+  z-index: 3;
+  /* outline: solid 2px green; */
+}
+
+/* тоглы */
+.inputs {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.input-label {
+  margin-left: 10px;
+}
+
+#inputNum {
+  height: 26px;
+  width: 60px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+/* Cтили для тоглов */
+.toggle-group {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.toggle-label {
+  margin-left: 10px;
+}
+
+.toggle-group input[type='checkbox'] {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  background-color: var(--color-ligth-blue);
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* Изменение фона при включении тогла */
+input:checked + .slider {
+  background-color: var(--color-blue);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .general {
+    flex-direction: column;
+  }
+
+  .inputs {
+    padding-left: 15%;
+  }
+}
+
+@keyframes progressAnimate {
+  from {
+    transform: rotate(90deg);
+  }
+
+  to {
+    transform: rotate(450deg);
+  }
+}

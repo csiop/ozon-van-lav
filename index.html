@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <div class="general">
+      <p class="header">Progress</p>
+      <div class="mainBox">
+        <div class="firstCircle"></div>
+
+        <div class="minHalfBox">
+          <div class="minHalf"></div>
+        </div>
+
+        <div class="maxHalfBox">
+          <div class="maxHalf"></div>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <!-- Поле ввода с подписью -->
+        <label class="input-value" for="inputNum">
+          <input id="inputNum" type="text" min="0" max="100" />
+          <span class="input-label">Value</span>
+        </label>
+
+        <!-- Первый тогл с подписью -->
+        <label class="toggle-group">
+          <input type="checkbox" id="toggleSwitch" />
+          <span class="slider"></span>
+          <span class="toggle-label">Animation</span>
+        </label>
+
+        <!-- Второй тогл с подписью -->
+        <label class="toggle-group">
+          <input type="checkbox" id="toggleMainBox" />
+          <span class="slider"></span>
+          <span class="toggle-label">Hide</span>
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
